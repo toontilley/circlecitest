@@ -1,12 +1,12 @@
+machine:
+  pre:
+    - sudo apt-get update
+    - sudo apt-get install python-dev
+    - sudo python -m pip install -U pip
+    - sudo pip install awsebcli --ignore-installed six
+  services:
+    - redis
 
-version: 2
-jobs:
-  build:
-    docker:
-      - image: python:3.5
-    working_directory: /code
-    steps:
-        - checkout
-        - run:
-            name: Hello world
-            command: echo "Hello world"
+  node:
+    version: 6.9.1
+
